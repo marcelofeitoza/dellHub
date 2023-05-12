@@ -82,9 +82,75 @@ class Post extends StatelessWidget {
                     color: Colors.grey.shade200,
                   ),
                   child: FadeInImage.assetNetwork(
-                      placeholder: 'assets/images/placeholder.png',
-                      image:
-                          "https://www.crio.do/blog/content/images/2021/03/Python-projects.png")),
+                    placeholder: 'assets/images/placeholder.png',
+                    image:
+                        "https://www.crio.do/blog/content/images/2021/03/Python-projects.png",
+                  )),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Icon(
+                            Icons.favorite_border,
+                            size: 24,
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text("Like",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.grey.shade600)),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Icon(Icons.comment_outlined,
+                                size: 24, color: Colors.grey.shade600),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Text("Comment",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey.shade600)),
+                          )
+                        ],
+                      )),
+                  Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Icon(Icons.share_outlined,
+                                size: 24, color: Colors.grey.shade600),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Text("Share",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey.shade600)),
+                          )
+                        ],
+                      )),
+                ],
+              )
             ],
           ),
         ),

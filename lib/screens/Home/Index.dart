@@ -17,6 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return () => setState(() => _selectedIndex = index);
   }
 
+  final String dellSvg = 'assets/images/dell.svg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +29,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 const EdgeInsets.only(
                     right: 16.0, left: 16.0, top: 48.0, bottom: 16.0),
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 24.0),
-                child: Text("DellHub",
-                    style: TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.w500,
-                    )),
+              Padding(
+                padding: const EdgeInsets.only(top: 24.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Dell",
+                          style: TextStyle(
+                            color: Colors.blue.shade800,
+                            fontSize: 48,
+                            fontWeight: FontWeight.w600,
+                          )),
+                      IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.more_vert,
+                          color: Colors.grey.shade700,
+                        ),
+                      )
+                    ]),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0, bottom: 48.0),
@@ -84,22 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
                             fixedSize: const Size(64, 64),
                             shadowColor: Colors.transparent,
                             foregroundColor: Colors.transparent,
-                            backgroundColor:
-                                const Color.fromARGB(255, 218, 237, 255),
+                            backgroundColor: _selectedIndex == 0
+                                ? const Color.fromARGB(255, 218, 237, 255)
+                                : const Color.fromARGB(128, 218, 237, 255),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(32.0),
                             ),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.list,
                             size: 32,
-                            color: Color(0xFF0001FC),
+                            color: _selectedIndex == 0
+                                ? const Color(0xFF0001FC)
+                                : Colors.grey.shade500,
                           )),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 8.0),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
                         child: Text("Trend Topics",
                             style: TextStyle(
-                                color: Color(0xff0001fc),
+                                color: _selectedIndex == 0
+                                    ? const Color(0xff0001fc)
+                                    : Colors.grey.shade500,
                                 fontWeight: FontWeight.w500)),
                       )
                     ],
@@ -118,16 +137,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(32.0),
                             ),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.star_border,
                             size: 32,
-                            color: Color(0xFF0001FC),
+                            color: _selectedIndex == 1
+                                ? const Color(0xFF0001FC)
+                                : Colors.grey.shade500,
                           )),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 8.0),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
                         child: Text("Favorites",
                             style: TextStyle(
-                                color: Color(0xff0001fc),
+                                color: _selectedIndex == 1
+                                    ? const Color(0xff0001fc)
+                                    : Colors.grey.shade500,
                                 fontWeight: FontWeight.w500)),
                       )
                     ],
@@ -140,22 +163,27 @@ class _HomeScreenState extends State<HomeScreen> {
                             fixedSize: const Size(64, 64),
                             shadowColor: Colors.transparent,
                             foregroundColor: Colors.transparent,
-                            backgroundColor:
-                                const Color.fromARGB(255, 218, 237, 255),
+                            backgroundColor: _selectedIndex == 2
+                                ? const Color.fromARGB(255, 218, 237, 255)
+                                : const Color.fromARGB(128, 218, 237, 255),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(32.0),
                             ),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.people_outline,
                             size: 32,
-                            color: Color(0xFF0001FC),
+                            color: _selectedIndex == 2
+                                ? const Color(0xFF0001FC)
+                                : Colors.grey.shade500,
                           )),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 8.0),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
                         child: Text("Community",
                             style: TextStyle(
-                                color: Color(0xff0001fc),
+                                color: _selectedIndex == 2
+                                    ? const Color(0xff0001fc)
+                                    : Colors.grey.shade500,
                                 fontWeight: FontWeight.w500)),
                       )
                     ],
